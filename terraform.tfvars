@@ -7,11 +7,11 @@ private_key = "c8077d3b-6220-496c-94f9-277bb9bff9cf"
 # Additional variable placeholders (fill in values as needed)
 db_username = "achu db"
 db_password = "32RK02kk"
-access_list_ip = "49.37.232.202" // we are craeting a cluster , so to this which all ip can be connected to this cluster
+access_list_ip = "49.37.232.202" # we are creating a cluster, so to this which all ip can be connected to this cluster
 cluster_name = "achu cluster"
 provider_name = "TENANT"
 backing_provider_name = "AZURE"
 provider_region_name = "US_EAST_2"
 provider_instance_size_name = "M0"
 mongo_db_major_version = "8.0"
-auto_scaling_disk_gb_enabled = "false"
+auto_scaling_disk_gb_enabled = false

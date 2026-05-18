@@ -27,7 +27,7 @@ terraform {
       source = "mongodb/mongodbatlas"
     }
   }
- }
+}
 
 provider "mongodbatlas" {
   public_key  = var.public_key
@@ -46,8 +46,8 @@ resource "mongodbatlas_project" "my_project" {
 # Create a Shared Tier Cluster
 #
 resource "mongodbatlas_cluster" "my_cluster" {
-  project_id              = mongodbatlas_project.my_project.id
-  name                    = var.cluster_name
+  project_id = mongodbatlas_project.my_project.id
+  name       = var.cluster_name
 
   # Provider Settings "block"
   provider_name = var.provider_name
@@ -92,9 +92,9 @@ resource "mongodbatlas_database_user" "my_user" {
 # or aws_security_group = "SECURITY_GROUP_ID"
 #
 resource "mongodbatlas_project_ip_access_list" "my_ipaddress" {
-      project_id = mongodbatlas_project.my_project.id
+  project_id = mongodbatlas_project.my_project.id
   ip_address = var.access_list_ip
-      comment    = "My IP Address"
+  comment    = "My IP Address"
 }
 
 # Use terraform output to display connection strings.
