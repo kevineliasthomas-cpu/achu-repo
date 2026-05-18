@@ -46,23 +46,19 @@ resource "mongodbatlas_project" "my_project" {
 # Create a Shared Tier Cluster
 #
 resource "mongodbatlas_cluster" "my_cluster" {
-  project_id   = mongodbatlas_project.my_project.id
-  name         = var.cluster_name
-  provider_name = var.provider_name
-
-  # options: AWS AZURE GCP
+  project_id            = mongodbatlas_project.my_project.id
+  name                  = var.cluster_name
+  provider_name         = var.provider_name
   backing_provider_name = var.backing_provider_name
 
   # options: M2/M5 atlas regions per cloud provider
   # GCP - CENTRAL_US SOUTH_AMERICA_EAST_1 WESTERN_EUROPE EASTERN_ASIA_PACIFIC NORTHEASTERN_ASIA_PACIFIC ASIA_SOUTH_1
   # AZURE - US_EAST_2 US_WEST CANADA_CENTRAL EUROPE_NORTH
   # AWS - US_EAST_1 US_WEST_2 EU_WEST_1 EU_CENTRAL_1 AP_SOUTH_1 AP_SOUTHEAST_1 AP_SOUTHEAST_2
-  provider_region_name = var.provider_region_name
-
-  # options: M2 M5
+  provider_region_name        = var.provider_region_name
   provider_instance_size_name = var.provider_instance_size_name
 
-  # Will not change till new version of MongoDB but must be included
+  # options: M2 M5
   mongo_db_major_version       = var.mongo_db_major_version
   auto_scaling_disk_gb_enabled = var.auto_scaling_disk_gb_enabled
 }
