@@ -1,87 +1,94 @@
-variable "organization" {
-  description = "Organization name"
-  type        = string
-}
-
-variable "project_name" {
-  description = "MongoDB Atlas project name"
-  type        = string
-}
-
-variable "project_id" {
-  description = "Organization ID (or existing project org_id)"
-  type        = string
-}
+#####################################################
+# MongoDB Atlas API Keys
+#####################################################
 
 variable "public_key" {
-  description = "MongoDB Atlas public API key"
+  description = "MongoDB Atlas Public API Key"
   type        = string
   sensitive   = true
 }
 
 variable "private_key" {
-  description = "MongoDB Atlas private API key"
+  description = "MongoDB Atlas Private API Key"
   type        = string
   sensitive   = true
 }
 
-variable "db_username" {
-  description = "Database user name"
+#####################################################
+# Existing MongoDB Atlas Project
+#####################################################
+
+variable "project_id" {
+  description = "Existing MongoDB Atlas Project ID"
   type        = string
-  default     = "USERNAME"
 }
 
-variable "db_password" {
-  description = "Database user password"
-  type        = string
-  sensitive   = true
-  default     = "PASSWORD"
-}
-
-variable "access_list_ip" {
-  description = "IP address to add to project access list"
-  type        = string
-  default     = "IP_ADDRESS"
-}
+#####################################################
+# Cluster Configuration
+#####################################################
 
 variable "cluster_name" {
-  description = "Cluster name"
+  description = "MongoDB Atlas Cluster Name"
   type        = string
-  default     = "atlasClusterName"
+  default     = "atlas-cluster"
 }
 
 variable "provider_name" {
-  description = "Provider name"
+  description = "Provider Type"
   type        = string
   default     = "TENANT"
 }
 
 variable "backing_provider_name" {
-  description = "Backing provider (AWS/AZURE/GCP)"
+  description = "Cloud Provider (AWS, AZURE, GCP)"
   type        = string
-  default     = "AWS"
+  default     = "AZURE"
 }
 
 variable "provider_region_name" {
-  description = "Provider region"
+  description = "Cloud Provider Region"
   type        = string
-  default     = "providerRegionName"
+  default     = "US_EAST_2"
 }
 
 variable "provider_instance_size_name" {
-  description = "Instance size"
+  description = "Cluster Instance Size"
   type        = string
-  default     = "M2"
+  default     = "M0"
 }
 
 variable "mongo_db_major_version" {
-  description = "MongoDB major version"
+  description = "MongoDB Major Version"
   type        = string
-  default     = "4.4"
+  default     = "7.0"
 }
 
 variable "auto_scaling_disk_gb_enabled" {
-  description = "Auto-scaling disk enabled"
+  description = "Enable Disk Auto Scaling"
+  type        = bool
+  default     = false
+}
+
+#####################################################
+# Database User Configuration
+#####################################################
+
+variable "db_username" {
+  description = "Database Username"
   type        = string
-  default     = "false"
+}
+
+variable "db_password" {
+  description = "Database Password"
+  type        = string
+  sensitive   = true
+}
+
+#####################################################
+# IP Access List
+#####################################################
+
+variable "access_list_ip" {
+  description = "IP Address Allowed to Access MongoDB Atlas"
+  type        = string
 }

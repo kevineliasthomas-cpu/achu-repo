@@ -1,5 +1,3 @@
-organization                 = "achu org"
-project_name                 = "achu proj"
 project_id                   = "6a0a731a995fb97290d5d2bd"
 public_key                   = "jvpazkzh"
 private_key                  = "c8077d3b-6220-496c-94f9-277bb9bff9cf"
