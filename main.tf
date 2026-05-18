@@ -37,10 +37,10 @@ provider "mongodbatlas" {
 #
 # Create a Project
 #
-resource "mongodbatlas_project" "my_project" {
-  name   = var.project_name
-  org_id = var.project_id
-}
+#resource "mongodbatlas_project" "my_project" {
+#  name   = var.project_name
+#  org_id = var.project_id
+#}
 
 #
 # Create a Shared Tier Cluster
