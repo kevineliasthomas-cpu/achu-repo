@@ -9,8 +9,17 @@ on:
       - main
 
 env:
-  MONGODB_ATLAS_PUBLIC_KEY: ${{ secrets.MONGODB_ATLAS_PUBLIC_KEY }}
-  MONGODB_ATLAS_PRIVATE_KEY: ${{ secrets.MONGODB_ATLAS_PRIVATE_KEY }}
+  TF_VAR_public_key: ${{ secrets.MONGODB_ATLAS_PUBLIC_KEY }}
+  TF_VAR_private_key: ${{ secrets.MONGODB_ATLAS_PRIVATE_KEY }}
+  TF_VAR_project_id: ${{ secrets.MONGODB_ATLAS_ORG_ID }}
+  TF_VAR_project_name: ${{ secrets.MONGODB_PROJECT_NAME }}
+  TF_VAR_db_username: ${{ secrets.MONGODB_DB_USERNAME }}
+  TF_VAR_db_password: ${{ secrets.MONGODB_DB_PASSWORD }}
+  TF_VAR_access_list_ip: ${{ secrets.MONGODB_ACCESS_LIST_IP }}
+  TF_VAR_cluster_name: ${{ secrets.MONGODB_CLUSTER_NAME }}
+  TF_VAR_provider_region_name: ${{ secrets.MONGODB_PROVIDER_REGION }}
+  TF_VAR_provider_instance_size_name: ${{ secrets.MONGODB_INSTANCE_SIZE }}
+  TF_VAR_mongo_db_major_version: ${{ secrets.MONGODB_VERSION }}
 
 jobs:
   terraform:
