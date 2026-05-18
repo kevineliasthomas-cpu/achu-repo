@@ -1,7 +1,7 @@
 project_id                   = "6a0a731a995fb97290d5d2bd"
 public_key                   = "jvpazkzh"
 private_key                  = "c8077d3b-6220-496c-94f9-277bb9bff9cf"
-db_username                  = "achu-db-01"
+db_username                  = "achu-db-02"
 db_password                  = "32RK02kk"
 access_list_ip               = "49.37.232.202"
 cluster_name                 = "achu-cluster"
