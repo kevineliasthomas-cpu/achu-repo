@@ -46,10 +46,8 @@ resource "mongodbatlas_project" "my_project" {
 # Create a Shared Tier Cluster
 #
 resource "mongodbatlas_cluster" "my_cluster" {
-  project_id = mongodbatlas_project.my_project.id
-  name       = var.cluster_name
-
-  # Provider Settings "block"
+  project_id   = mongodbatlas_project.my_project.id
+  name         = var.cluster_name
   provider_name = var.provider_name
 
   # options: AWS AZURE GCP
@@ -65,7 +63,7 @@ resource "mongodbatlas_cluster" "my_cluster" {
   provider_instance_size_name = var.provider_instance_size_name
 
   # Will not change till new version of MongoDB but must be included
-  mongo_db_major_version = var.mongo_db_major_version
+  mongo_db_major_version       = var.mongo_db_major_version
   auto_scaling_disk_gb_enabled = var.auto_scaling_disk_gb_enabled
 }
 
@@ -99,5 +97,5 @@ resource "mongodbatlas_project_ip_access_list" "my_ipaddress" {
 
 # Use terraform output to display connection strings.
 output "connection_strings" {
-  value = mongodbatlas_cluster.my_cluster.connection_strings.0.standard_srv
+  value = mongodbatlas_cluster.my_cluster.connection_strings[0].standard_srv
 }
